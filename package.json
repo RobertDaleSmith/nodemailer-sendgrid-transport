@@ -17,11 +17,12 @@
   "author": "SendGrid <community@sendgrid.com> (sendgrid.com)",
   "contributors": [
     "Eddie Zaneski <eddiezane@sendgrid.com",
-    "Will Smidlein <ws@sendgrid.com>"
+    "Will Smidlein <ws@sendgrid.com>",
+    "Robert Dale Smith <robert@robertdalesmith.com>"
   ],
   "license": "MIT",
   "dependencies": {
-    "sendgrid": "^1.8.0"
+    "@sendgrid/mail": "^6.4.0"
   },
   "devDependencies": {
     "chai": "^1.9.1",
