@@ -1,6 +1,6 @@
 {
   "name": "nodemailer-sendgrid-transport",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "SendGrid transport for Nodemailer",
   "main": "src/sendgrid-transport.js",
   "scripts": {
