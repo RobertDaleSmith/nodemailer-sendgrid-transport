@@ -43,31 +43,37 @@ SendGridTransport.prototype.send = function(mail, callback) {
 
   // populate from and fromname
   if (from) {
+    email.from = {};
     if (from.address) {
-      email.from = from.address;
+      email.from.email = from.address;
     }
 
     if (from.name) {
-      email.fromname = from.name;
+      email.from.name = from.name;
     }
   }
 
   // populate to and toname arrays
   email.to = to.map(function(rcpt) {
-    return rcpt.address || '';
-  });
-
-  email.toname = to.map(function(rcpt) {
-    return rcpt.name || '';
+    return rcpt.address ? {
+      email: rcpt.address,
+      name: rcpt.name || ''
+    } : '';
   });
 
   // populate cc and bcc arrays
   email.cc = cc.map(function(rcpt) {
-    return rcpt.address || '';
+    return rcpt.address ? {
+      email: rcpt.address,
+      name: rcpt.name || ''
+    } : '';
   });
 
-  email.bcc = bcc.map(function(rcpt) {
-    return rcpt.address || '';
+  email.bcc = cc.map(function(rcpt) {
+    return rcpt.address ? {
+      email: rcpt.address,
+      name: rcpt.name || ''
+    } : '';
   });
 
   // a list for processing attachments
